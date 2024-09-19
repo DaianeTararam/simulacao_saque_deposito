@@ -38,7 +38,6 @@ public class Banco extends Thread{
 		} finally {
 			transacoes.release();
 		}
-		System.out.println("O novo saldo da conta: " + codigo + " é de R$"+ saldo);	
 	}
 
 	private void transacao() {
@@ -56,7 +55,7 @@ public class Banco extends Thread{
                 saldo += valor;
                 System.out.println("A conta: " + codigo + " depositou R$" + valor);
             }
-            Thread.sleep(5000);
+            Thread.sleep(1000);
             System.out.println("O novo saldo da conta: " + codigo + " é de R$" + saldo);
         } catch (InterruptedException e) {
             e.printStackTrace();
